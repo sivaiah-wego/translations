@@ -1,0 +1,23 @@
+{
+  "name": "hotel-amenities-translator",
+  "version": "1.0.0",
+  "description": "Hotel amenities translator using OpenRouter API",
+  "main": "translator.js",
+      "scripts": {
+        "start": "node translator.js",
+        "test": "node test-api.js",
+        "setup": "node setup.js",
+        "analyze": "node analyze-costs.js",
+        "test-project": "node test-project.js",
+        "validate": "node validate_translations.js"
+    },
+  "dependencies": {
+    "openai": "^4.20.1",
+    "csv-parser": "^3.0.0",
+    "csv-writer": "^1.6.0",
+    "dotenv": "^16.3.1"
+  },
+  "keywords": ["translation", "openrouter", "hotel", "amenities"],
+  "author": "Your Name",
+  "license": "MIT"
+} 
