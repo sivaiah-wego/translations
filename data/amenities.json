@@ -1,0 +1,1824 @@
+[
+  {
+    "id": 2,
+    "priority": 1,
+    "roomAmenitiesCategoryId": 6,
+    "name": "Air conditioning",
+    "roomAmenitiesCategoryName": "Bedroom",
+    "nameAll": {
+      "en": "Air conditioning",
+      "ar": "تكييف الهواء ",
+      "de": "Klimaanlage",
+      "es": "Aire acondicionado",
+      "es419": "Aire acondicionado",
+      "fr": "Climatisation",
+      "it": "Aria condizionata",
+      "ja": "エアコン",
+      "ko": "에어컨",
+      "nl": "Airconditioning",
+      "pl": "klimatyzacja",
+      "pt": "Ar condicionado",
+      "ptBr": "Ar-condicionado",
+      "ru": "Кондиционер",
+      "sv": "Luftkonditionering",
+      "th": "เครื่องปรับอากาศ",
+      "vi": "Điều hòa nhiệt độ",
+      "zhCn": "空调",
+      "zhHk": "空調",
+      "gu": "એર કંડીશનિંગ",
+      "hi": "वातानुकूलन",
+      "kn": "ಹವಾನಿಯಂತ್ರಣ",
+      "ml": "എയര്‍ കണ്ടീഷനിംഗ്",
+      "mr": "वातानुकूलन",
+      "or": "ଏୟାର କଣ୍ଡିସିନର",
+      "pa": "ਵਾਤਾਅਨੁਕੂਲਿਤ",
+      "ta": "காற்றுப் பதனம்",
+      "te": "ఏ.సి",
+      "bn": "বাতানুকুল "
+    }
+  },
+  {
+    "id": 7,
+    "priority": 1,
+    "roomAmenitiesCategoryId": 7,
+    "name": "Bathtub",
+    "roomAmenitiesCategoryName": "Bathroom",
+    "nameAll": {
+      "en": "Bathtub",
+      "ar": "حوض استحمام",
+      "de": "Badewanne",
+      "es": "Bañera",
+      "es419": "Bañera",
+      "fr": "Baignoire",
+      "it": "Vasca da bagno",
+      "ja": "バスタブ",
+      "ko": "욕조",
+      "nl": "Badkuip",
+      "pl": "wanna",
+      "pt": "Banheira",
+      "ptBr": "Banheira",
+      "ru": "Ванна",
+      "sv": "Badkar",
+      "th": "อ่างอาบน้ำ",
+      "vi": "Bồn tắm",
+      "zhCn": "浴盆",
+      "zhHk": "浴缸",
+      "gu": "બાથટબ",
+      "hi": "बाथ टब ",
+      "kn": "ಸ್ನಾನದ ತೊಟ್ಟಿ",
+      "ml": "ബാത്ത് ടബ് ",
+      "mr": "बाथटब",
+      "or": "ବାଥ ଟୁବ",
+      "pa": "ਬਾਥਟਬ",
+      "ta": "குளியல் தொட்டி",
+      "te": "బాత్ టబ్",
+      "bn": "বাথ টাব "
+    }
+  },
+  {
+    "id": 13,
+    "priority": 1,
+    "roomAmenitiesCategoryId": 8,
+    "name": "Coffee/Tea maker",
+    "roomAmenitiesCategoryName": "Food & Drinks",
+    "nameAll": {
+      "en": "Coffee/Tea maker",
+      "ar": "جهاز قهوة \\\\ شاي",
+      "de": "Kaffee-/Teekocher",
+      "es": "Cafetera/tetera",
+      "es419": "Cafetera/Tetera",
+      "fr": "Cafetière/théière",
+      "it": "Macchinetta per caffè/tè",
+      "ja": "コーヒー/ティーメーカー",
+      "ko": "차/커피 머신",
+      "nl": "Koffie/Thee faciliteiten",
+      "pl": "automat do kawy/herbaty",
+      "pt": "Café/Chá",
+      "ptBr": "Máquina para café/chá",
+      "ru": "Кофеварка",
+      "sv": "Kaffe-/tebryggare",
+      "th": "กาต้มกาแฟ/ชา",
+      "vi": "Pha Cà phê/Trà",
+      "zhCn": "咖啡/茶壶",
+      "zhHk": "咖啡／沖茶機",
+      "gu": "કોફી અથવા ટી મેકર",
+      "hi": "कॉफी / टी मेकर ",
+      "kn": "ಕಾಫಿ /ಟೀ ಮೇಕರ್‌",
+      "ml": "കോഫി/ടീ മേക്കര്‍ ",
+      "mr": "कॉफी / चहा मेकर",
+      "or": "କଫି / ଚା ମେକର",
+      "pa": "ਕਾਫੀ/ਚਾਹ ਮੇਕਰ",
+      "ta": "காப்பி/தேநீர் தயாரிக்கும் இயந்திரம்",
+      "te": "కాఫీ/టీ మేకర్",
+      "bn": "চা/কফি বানানোর যন্ত্র "
+    }
+  },
+  {
+    "id": 27,
+    "priority": 1,
+    "roomAmenitiesCategoryId": 7,
+    "name": "Hairdryer",
+    "roomAmenitiesCategoryName": "Bathroom",
+    "nameAll": {
+      "en": "Hairdryer",
+      "ar": "مجفف شعر",
+      "de": "Fön",
+      "es": "Secador de pelo",
+      "es419": "Secador",
+      "fr": "Sèche-cheveux",
+      "it": "Asciugacapelli",
+      "ja": "ドライヤー",
+      "ko": "헤어 드라이기",
+      "nl": "Föhn",
+      "pl": "suszarka do włosów",
+      "pt": "Secador de Cabelo",
+      "ptBr": "Secador de cabelo",
+      "ru": "Фен",
+      "sv": "Hårtork",
+      "th": "ไดร์เป่าผม",
+      "vi": "Máy sấy tóc",
+      "zhCn": "吹风机",
+      "zhHk": "吹風機",
+      "gu": "હેર ડ્રાયર",
+      "hi": "हेयर ड्रायर",
+      "kn": "ಹೇರ್‌ ಡ್ರೈಯರ್‌",
+      "ml": "ഹെയര്‍ ഡ്രയര്‍",
+      "mr": "हेअर ड्रायर",
+      "or": "ହେଆରଡ୍ରାଏର",
+      "pa": "ਹੇਅਰ ਡਰਾਇਰ",
+      "ta": "முடி உலர்த்தி",
+      "te": "హెయిర్ డ్రయర్",
+      "bn": "হেয়ার ড্রায়ার "
+    }
+  },
+  {
+    "id": 32,
+    "priority": 1,
+    "roomAmenitiesCategoryId": 10,
+    "name": "Internet access",
+    "roomAmenitiesCategoryName": "Entertainment",
+    "nameAll": {
+      "en": "Internet access",
+      "ar": "اتاحة الانترنت",
+      "de": "Internetzugang",
+      "es": "Acceso a internet",
+      "es419": "Acceso a internet",
+      "fr": "Accès internet",
+      "it": "Accesso ad Internet",
+      "ja": "インターネットアクセス",
+      "ko": "인터넷 접속",
+      "nl": "Internettoegang",
+      "pl": "dostęp do Internetu",
+      "pt": "Acesso Internet",
+      "ptBr": "Acesso à internet",
+      "ru": "Интернет-доступ",
+      "sv": "Tillgång till internet",
+      "th": "การเข้าถึงอินเทอร์เน็ต",
+      "vi": "Truy cập internet",
+      "zhCn": "互联网接入",
+      "zhHk": "網路存取",
+      "gu": "ઇન્ટરનેટનો ઉપયોગ",
+      "hi": "इंटरनेट एक्सेस",
+      "kn": "ಅಂತರ್‌ಜಾಲ ಸಂಪರ್ಕ",
+      "ml": "അന്താരാഷ്ട്ര ഡയറക്ട് കോളിംഗ്",
+      "mr": "इंटरनेटचा वापर",
+      "or": "ଇଣ୍ଟରନେଟ ବ୍ୟବହାର",
+      "pa": "ਇੰਟਰਨੈੱਟ ਪਹੁੰਚ",
+      "ta": "இணைய அணுகல்",
+      "te": "ఇంటర్నెట్ సదుపాయం",
+      "bn": "ইন্তারনেতের সুবিধা "
+    }
+  },
+  {
+    "id": 34,
+    "priority": 1,
+    "roomAmenitiesCategoryId": 11,
+    "name": "Iron & ironing board",
+    "roomAmenitiesCategoryName": "Others",
+    "nameAll": {
+      "en": "Iron & ironing board",
+      "ar": "مكوى و لوح كوي",
+      "de": "Bügeleisen und Bügelbrett",
+      "es": "Plancha y tabla de planchar",
+      "es419": "Plancha y tabla de planchar",
+      "fr": "Fer et planche à repasser",
+      "it": "Ferro e asse da stiro",
+      "ja": "アイロン ＆ アイロン台",
+      "ko": "다리미 및 다림판",
+      "nl": "Strijkijzer en strijkplank",
+      "pl": "żelazko i deska do prasowania",
+      "pt": "Ferro e tábua de engomar",
+      "ptBr": "Ferro e tábua de passar",
+      "ru": "Утюг и гладильная доска",
+      "sv": "Strykjärn & strykbräda",
+      "th": "เตารีดและโต๊ะรีดผ้า",
+      "vi": "Bàn là & kệ bàn là",
+      "zhCn": "熨斗和熨衣板",
+      "zhHk": "熨斗與燙衣板",
+      "gu": "ઈસ્ત્રી અને ઈસ્ત્રી બોર્ડ",
+      "hi": "इस्त्री / इस्त्री करने का बोर्ड",
+      "kn": "ಇಸ್ತ್ರಿಪೆಟ್ಟಿಗೆ ಮತ್ತು ಮಣೆ",
+      "ml": "ഐ‌പ്പോഡ് ഡോക്കിംഗ് സ്റ്റേഷന്‍",
+      "mr": "इस्त्री आणि इस्त्रीसाठी बोर्ड",
+      "or": "ଇସ୍ତ୍ରୀ ଏବଂ ଇସ୍ତ୍ରୀ ବୋର୍ଡ",
+      "pa": "ਪ੍ਰੈੱਸ ਅਤੇ ਪ੍ਰੈੱਸ ਤਖਤੀ",
+      "ta": "இஸ்திரி மற்றும் இஸ்திரி பலகை",
+      "te": "ఐరన్ / ఐరనింగ్ బోర్డ్",
+      "bn": "ইস্ত্রি এবং ইস্ত্রির বোর্ড "
+    }
+  },
+  {
+    "id": 38,
+    "priority": 1,
+    "roomAmenitiesCategoryId": 8,
+    "name": "Microwave",
+    "roomAmenitiesCategoryName": "Food & Drinks",
+    "nameAll": {
+      "en": "Microwave",
+      "ar": "ميكرويف",
+      "de": "Mikrowelle",
+      "es": "Microondas",
+      "es419": "Microondas",
+      "fr": "Four à micro-ondes",
+      "it": "forno a microonde",
+      "ja": "電子レンジ",
+      "ko": "전자렌지",
+      "nl": "Magnetron",
+      "pl": "mikrofalówka",
+      "pt": "Microondas",
+      "ptBr": "Micro-ondas",
+      "ru": "Микроволновая печь",
+      "sv": "Micro-ugn",
+      "th": "เตาไมโครเวฟ",
+      "vi": "Lò vi sóng",
+      "zhCn": "微波炉",
+      "zhHk": "微波爐",
+      "gu": "માઈક્રોવેવ",
+      "hi": "माइक्रोवेव",
+      "kn": "ಮೈಕ್ರೊವೇವ್‌",
+      "ml": "പ്രാദേശിക കോളുകള്‍",
+      "mr": "माइक्रोवेव",
+      "or": "ମାଇକ୍ରୋୱେବ",
+      "pa": "ਮਾਈਕ੍ਰੋਵੇਵ",
+      "ta": "நுண்ணலை",
+      "te": "మైక్రోవేవ్",
+      "bn": "মাইক্রোওয়েভ "
+    }
+  },
+  {
+    "id": 49,
+    "priority": 1,
+    "roomAmenitiesCategoryId": 11,
+    "name": "Private pool",
+    "roomAmenitiesCategoryName": "Others",
+    "nameAll": {
+      "en": "Private pool",
+      "ar": "بركة خاصة",
+      "de": "Privates Schwimmbecken",
+      "es": "Piscina privada",
+      "es419": "Piscina privada",
+      "fr": "Piscine privée",
+      "it": "Piscina privata",
+      "ja": "プライベートプール",
+      "ko": "개인 수영장",
+      "nl": "Privé zwembad",
+      "pl": "prywatny basen",
+      "pt": "Piscina privada",
+      "ptBr": "Piscina privativa",
+      "ru": "Частный бассейн",
+      "sv": "Privat pool",
+      "th": "สระว่ายน้ำส่วนตัว",
+      "vi": "Bể cá nhân",
+      "zhCn": "私人游泳池",
+      "zhHk": "私人泳池",
+      "gu": "પ્રાઈવેટ પૂલ",
+      "hi": "प्राइवेट पूल",
+      "kn": "ಖಾಸಗಿ ಈಜುಕೊಳ",
+      "ml": "സ്വകാര്യ കുളം",
+      "mr": "खाजगी पूल",
+      "or": "ପ୍ରାଇଭେଟ ପୁଲ",
+      "pa": "ਨਿਜੀ ਤਲਾਅ",
+      "ta": "தனிப்பட்ட குளம்",
+      "te": "ప్రైవేట్ కొలను",
+      "bn": "ব্যক্তিগত পুল "
+    }
+  },
+  {
+    "id": 68,
+    "priority": 1,
+    "roomAmenitiesCategoryId": 10,
+    "name": "Television",
+    "roomAmenitiesCategoryName": "Entertainment",
+    "nameAll": {
+      "en": "Television",
+      "ar": "التلفاز",
+      "de": "Fernsehen",
+      "es": "Televisión",
+      "es419": "Televisión",
+      "fr": "Télévision",
+      "it": "Televisore",
+      "ja": "テレビ",
+      "ko": "TV",
+      "nl": "Televisie",
+      "pl": "telewizja",
+      "pt": "Televisão",
+      "ptBr": "Televisão",
+      "ru": "Телевизор",
+      "sv": "Television",
+      "th": "โทรทัศน์",
+      "vi": "Ti vi",
+      "zhCn": "电视",
+      "zhHk": "電視",
+      "gu": "ટેલીવિઝન",
+      "hi": "टेलीविज़न ",
+      "kn": "ಟೆಲಿವಿಜನ್‌",
+      "ml": "ടെലിവിഷന്‍ ",
+      "mr": "टेलीव्हीजन",
+      "or": "ଟେଲିଭିଜନ",
+      "pa": "ਟੈਲੀਵੀਯਨ",
+      "ta": "தொலைக்காட்சி",
+      "te": "టివీ",
+      "bn": "টিভি "
+    }
+  },
+  {
+    "id": 79,
+    "priority": 1,
+    "roomAmenitiesCategoryId": 11,
+    "name": "Dryer",
+    "roomAmenitiesCategoryName": "Others",
+    "nameAll": {
+      "en": "Dryer",
+      "hi": "ड्रायर ",
+      "ar": "مجفف",
+      "fa": "خشک‌کن",
+      "es": "Secadora"
+    }
+  },
+  {
+    "id": 81,
+    "priority": 1,
+    "roomAmenitiesCategoryId": 8,
+    "name": "Stove",
+    "roomAmenitiesCategoryName": "Food & Drinks",
+    "nameAll": {
+      "en": "Stove",
+      "hi": "स्टोव ",
+      "ar": "موقد",
+      "fa": "اجاق گاز",
+      "ms": "Dapur Masak",
+      "es": "Estufa"
+    }
+  },
+  {
+    "id": 82,
+    "priority": 1,
+    "roomAmenitiesCategoryId": 8,
+    "name": "Refrigerator",
+    "roomAmenitiesCategoryName": "Food & Drinks",
+    "nameAll": {
+      "en": "Refrigerator",
+      "hi": "रेफ्रीजिरेटर ",
+      "ar": "ثلاجة",
+      "fa": "یخچال",
+      "es": "Refrigerador"
+    }
+  },
+  {
+    "id": 83,
+    "priority": 1,
+    "roomAmenitiesCategoryId": 8,
+    "name": "Oven",
+    "roomAmenitiesCategoryName": "Food & Drinks",
+    "nameAll": {
+      "en": "Oven",
+      "hi": "ओवन ",
+      "ar": "فرن",
+      "fa": "فر",
+      "es": "Horno"
+    }
+  },
+  {
+    "id": 86,
+    "priority": 1,
+    "roomAmenitiesCategoryId": 8,
+    "name": "Kitchen",
+    "roomAmenitiesCategoryName": "Food & Drinks",
+    "nameAll": {
+      "en": "Kitchen",
+      "hi": "रसोई",
+      "ar": "مطبخ",
+      "ms": "Dapur",
+      "es": "Cocina"
+    }
+  },
+  {
+    "id": 90,
+    "priority": 1,
+    "roomAmenitiesCategoryId": 11,
+    "name": "Carbon monoxide detector",
+    "roomAmenitiesCategoryName": "Others",
+    "nameAll": {
+      "en": "Carbon monoxide detector",
+      "hi": "कार्बन मोनोऑक्साइड  डिटेक्टर ",
+      "ar": "كاشف أول أكسيد الكربون",
+      "fa": "حسگر منوکسید کربن",
+      "ms": "Pengesan karbon monoksida",
+      "es": "Detector de monóxido de carbono"
+    }
+  },
+  {
+    "id": 92,
+    "priority": 1,
+    "roomAmenitiesCategoryId": 11,
+    "name": "Fire extinguisher",
+    "roomAmenitiesCategoryName": "Others",
+    "nameAll": {
+      "en": "Fire extinguisher",
+      "hi": "अग्नि रोधक",
+      "ar": "مطفأة حريق",
+      "fa": "تجهیزات اطفا حریق",
+      "ms": "Alat pemadam api",
+      "es": "Extintor de incendios"
+    }
+  },
+  {
+    "id": 93,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 6,
+    "name": "Premium Bedding",
+    "roomAmenitiesCategoryName": "Bedroom",
+    "nameAll": {
+      "en": "Premium Bedding",
+      "ar": "مفروشات فاخرة",
+      "fa": "ملافه های ممتاز",
+      "ru": "Постельное белье премиум-класса",
+      "ms": "Peralatan Tempat Tidur Premium",
+      "es": "Ropa de cama de lujo"
+    }
+  },
+  {
+    "id": 94,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 6,
+    "name": "Bed Linen",
+    "roomAmenitiesCategoryName": "Bedroom",
+    "nameAll": {
+      "en": "Bed Linen",
+      "ar": "بياضات السرير",
+      "fa": "روکش رختخواب",
+      "ru": "Постельное белье",
+      "ms": "Line Katil ",
+      "es": "Ropa de cama"
+    }
+  },
+  {
+    "id": 95,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 6,
+    "parentAmenity": {
+      "id": 94,
+      "name": "Bed Linen"
+    },
+    "name": "Bed Linen (surcharge)",
+    "roomAmenitiesCategoryName": "Bedroom",
+    "nameAll": {
+      "en": "Bed Linen (surcharge)",
+      "ar": "بياضات السرير (تكلفة إضافية)",
+      "fa": "روکش رختخواب (با هزینه اضافه)",
+      "ru": "Постельное белье (за дополнительную плату)",
+      "ms": "Linen katil (bayaran tambahan)",
+      "es": "Ropa de cama (cargo adicional)"
+    }
+  },
+  {
+    "id": 96,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 6,
+    "name": "Hypoallergenic Bed Linen",
+    "roomAmenitiesCategoryName": "Bedroom",
+    "nameAll": {
+      "en": "Hypoallergenic Bed Linen",
+      "ar": "بياضات سرير مضادة للحساسية",
+      "fa": "روکش رختخواب ضدحساسیت",
+      "ru": "Гипоаллергенное постельное белье",
+      "ms": "Linen katil hipoalergenik",
+      "es": "Ropa de cama hipoalergénica"
+    }
+  },
+  {
+    "id": 97,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 6,
+    "name": "Premium Bed linen",
+    "roomAmenitiesCategoryName": "Bedroom",
+    "nameAll": {
+      "en": "Premium Bed linen",
+      "ar": "بياضات سرير فاخرة",
+      "fa": "روکش رختخواب ممتاز",
+      "ru": "Постельное белье премиум-класса",
+      "ms": "Linen katil premium",
+      "es": "Ropa de cama de lujo"
+    }
+  },
+  {
+    "id": 98,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 6,
+    "name": "Electric blanket",
+    "roomAmenitiesCategoryName": "Bedroom",
+    "nameAll": {
+      "en": "Electric blanket",
+      "ar": "بطانية كهربائية",
+      "fa": "پتوی برقی",
+      "ru": "Электрическое одеяло",
+      "ms": "Selimut elektrik",
+      "es": "Manta eléctrica"
+    }
+  },
+  {
+    "id": 99,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 6,
+    "name": "Feather Pillows",
+    "roomAmenitiesCategoryName": "Bedroom",
+    "nameAll": {
+      "en": "Feather Pillows",
+      "ar": "وسائد من الريش",
+      "fa": "بالشت پر",
+      "ru": "Перьевые подушки",
+      "ms": "Bantal Bulu",
+      "es": "Almohadas de plumas"
+    }
+  },
+  {
+    "id": 100,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 6,
+    "name": "Foam Pillows",
+    "roomAmenitiesCategoryName": "Bedroom",
+    "nameAll": {
+      "en": "Foam Pillows",
+      "ar": "وسائد رغوية",
+      "fa": "بالشت فوم",
+      "ru": "Пенные подушки",
+      "ms": "Bantal foam",
+      "es": "Almohadas de espuma"
+    }
+  },
+  {
+    "id": 101,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 6,
+    "name": "Hypoallergenic Pillows",
+    "roomAmenitiesCategoryName": "Bedroom",
+    "nameAll": {
+      "en": "Hypoallergenic Pillows",
+      "ar": "وسائد مضادة للحساسية",
+      "fa": "بالشت‌های ضدحساسیت",
+      "ru": "Гипоаллергенные подушки",
+      "ms": "Bantal hipoalergenik",
+      "es": "Almohadas hipoalergénicas"
+    }
+  },
+  {
+    "id": 102,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 6,
+    "name": "Pillow Menu",
+    "roomAmenitiesCategoryName": "Bedroom",
+    "nameAll": {
+      "en": "Pillow Menu",
+      "ar": "قائمة الوسائد",
+      "fa": "منوی بالشت",
+      "ru": "Меню подушек",
+      "ms": "Menu Bantal",
+      "es": "Menú de almohadas"
+    }
+  },
+  {
+    "id": 103,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 6,
+    "name": "Window",
+    "roomAmenitiesCategoryName": "Bedroom",
+    "nameAll": {
+      "en": "Window",
+      "ar": "نافذة",
+      "fa": "پنجره",
+      "ru": "Окно",
+      "ms": "Tingkap",
+      "es": "Ventana"
+    }
+  },
+  {
+    "id": 104,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 6,
+    "name": "No windows",
+    "roomAmenitiesCategoryName": "Bedroom",
+    "nameAll": {
+      "en": "No windows",
+      "ar": "بدون نوافذ",
+      "fa": "بدون پنجره",
+      "ru": "Без окон",
+      "ms": "Tiada tingkap",
+      "es": "Sin ventanas"
+    }
+  },
+  {
+    "id": 105,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 6,
+    "name": "Separate bedroom",
+    "roomAmenitiesCategoryName": "Bedroom",
+    "nameAll": {
+      "en": "Separate bedroom",
+      "ar": "غرفة نوم منفصلة",
+      "fa": "اتاق خواب جدا",
+      "ru": "Отдельная спальня",
+      "ms": "Bilik tidur berasingan",
+      "es": "Dormitorio independiente"
+    }
+  },
+  {
+    "id": 106,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 6,
+    "name": "Blackout Curtains",
+    "roomAmenitiesCategoryName": "Bedroom",
+    "nameAll": {
+      "en": "Blackout Curtains",
+      "ar": "ستائر عازلة للضوء",
+      "fa": "پرده کاملا تاریک",
+      "ru": "Шторы блекаут",
+      "ms": "Tirai Blackout",
+      "es": "Cortinas opacas"
+    }
+  },
+  {
+    "id": 107,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 6,
+    "parentAmenity": {
+      "id": 2,
+      "name": "Air conditioning"
+    },
+    "name": "Air conditioning (surcharge)",
+    "roomAmenitiesCategoryName": "Bedroom",
+    "nameAll": {
+      "en": "Air conditioning (surcharge)",
+      "ar": "تكييف هواء (تكلفة إضافية)",
+      "fa": "تهویه مطبوع (اضافه هزینه)",
+      "ru": "Кондиционер (за дополнительную плату)",
+      "ms": "Penyaman udara (surcaj)",
+      "es": "Aire acondicionado (cargo adicional)"
+    }
+  },
+  {
+    "id": 108,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 6,
+    "name": "Heating",
+    "roomAmenitiesCategoryName": "Bedroom",
+    "nameAll": {
+      "en": "Heating",
+      "ar": "تدفئة",
+      "fa": "گرمایش",
+      "ru": "Отопление",
+      "ms": "Pemanasan",
+      "es": "Calefacción"
+    }
+  },
+  {
+    "id": 109,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 6,
+    "name": "Fan",
+    "roomAmenitiesCategoryName": "Bedroom",
+    "nameAll": {
+      "en": "Fan",
+      "ar": "مروحة",
+      "fa": "پنکه",
+      "ru": "Вентилятор",
+      "ms": "Kipas",
+      "es": "Ventilador"
+    }
+  },
+  {
+    "id": 110,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 6,
+    "name": "Safe",
+    "roomAmenitiesCategoryName": "Bedroom",
+    "nameAll": {
+      "en": "Safe",
+      "ar": "آمن",
+      "fa": "گاوصندوق",
+      "ru": "Сейф",
+      "es": "Caja fuerte"
+    }
+  },
+  {
+    "id": 111,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 6,
+    "parentAmenity": {
+      "id": 110,
+      "name": "Safe"
+    },
+    "name": "Safe (surcharge)",
+    "roomAmenitiesCategoryName": "Bedroom",
+    "nameAll": {
+      "en": "Safe (surcharge)",
+      "ar": "آمن (تكلفة إضافية)",
+      "fa": "گاوصندوق (اضافه هزینه)",
+      "ru": "Сейф (за дополнительную плату)",
+      "es": "Caja fuerte (cargo adicional)"
+    }
+  },
+  {
+    "id": 112,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 7,
+    "name": "Private Bathroom",
+    "roomAmenitiesCategoryName": "Bathroom",
+    "nameAll": {
+      "en": "Private Bathroom",
+      "ar": "حمام خاص",
+      "fa": "حمام خصوصی",
+      "ru": "Отдельная ванная комната",
+      "es": "Baño privado"
+    }
+  },
+  {
+    "id": 113,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 7,
+    "name": "Partially Open Bathroom",
+    "roomAmenitiesCategoryName": "Bathroom",
+    "nameAll": {
+      "en": "Partially Open Bathroom",
+      "ar": "حمام مفتوح جزئيا",
+      "fa": "حمام نیمه باز",
+      "ru": "Частично открытая ванная комната",
+      "es": "Baño parcialmente abierto"
+    }
+  },
+  {
+    "id": 114,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 7,
+    "name": "Outdoor Bathroom",
+    "roomAmenitiesCategoryName": "Bathroom",
+    "nameAll": {
+      "en": "Outdoor Bathroom",
+      "ar": "حمام خارجي",
+      "fa": "حمام در فضای سرباز",
+      "ru": "Ванная комната на открытом воздухе",
+      "es": "Baño al aire libre"
+    }
+  },
+  {
+    "id": 115,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 7,
+    "name": "Private bathroom (not in room)",
+    "roomAmenitiesCategoryName": "Bathroom",
+    "nameAll": {
+      "en": "Private bathroom (not in room)",
+      "ar": "حمام خاص (ليس داخل الغرفة)",
+      "fa": "حمام خصوصی (نه در اتاق)",
+      "ru": "Отдельная ванная комната (не в номере)",
+      "es": "Baño privado (fuera de la habitación)"
+    }
+  },
+  {
+    "id": 116,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 7,
+    "name": "Shared Bathroom",
+    "roomAmenitiesCategoryName": "Bathroom",
+    "nameAll": {
+      "en": "Shared Bathroom",
+      "ar": "حمام مشترك",
+      "fa": "سرویس بهداشتی مشترک",
+      "ru": "Общая ванная комната",
+      "es": "Baño compartido"
+    }
+  },
+  {
+    "id": 117,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 7,
+    "name": "Bidet",
+    "roomAmenitiesCategoryName": "Bathroom",
+    "nameAll": {
+      "en": "Bidet",
+      "ar": "شطاف",
+      "fa": "شلنگ",
+      "ru": "Биде",
+      "es": "Bidé"
+    }
+  },
+  {
+    "id": 118,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 7,
+    "name": "Toilet",
+    "roomAmenitiesCategoryName": "Bathroom",
+    "nameAll": {
+      "en": "Toilet",
+      "ar": "مرحاض",
+      "fa": "سرویس بهداشتی",
+      "ru": "Туалет",
+      "es": "Inodoro"
+    }
+  },
+  {
+    "id": 119,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 7,
+    "name": "Shared Toilet",
+    "roomAmenitiesCategoryName": "Bathroom",
+    "nameAll": {
+      "en": "Shared Toilet",
+      "ar": "مرحاض مشترك",
+      "fa": "سرویس بهداشتی مشترک",
+      "ru": "Общий туалет",
+      "es": "Inodoro compartido"
+    }
+  },
+  {
+    "id": 120,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 7,
+    "name": "Indoor Shower",
+    "roomAmenitiesCategoryName": "Bathroom",
+    "nameAll": {
+      "en": "Indoor Shower",
+      "ar": "دش داخلي",
+      "fa": "دوش فضای داخلی",
+      "ru": "Душ в помещении",
+      "es": "Ducha interior"
+    }
+  },
+  {
+    "id": 121,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 7,
+    "name": "Outdoor Shower",
+    "roomAmenitiesCategoryName": "Bathroom",
+    "nameAll": {
+      "en": "Outdoor Shower",
+      "ar": "دش خارجي",
+      "fa": "دوش فضای باز",
+      "ru": "Душ на открытом воздухе",
+      "es": "Ducha al aire libre"
+    }
+  },
+  {
+    "id": 122,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 7,
+    "name": "Walk-in shower",
+    "roomAmenitiesCategoryName": "Bathroom",
+    "nameAll": {
+      "en": "Walk-in shower",
+      "ar": "دش مستوى الأرضية",
+      "fa": "دوش Walk-in ",
+      "ru": "Душевая кабина",
+      "es": "Ducha a ras de suelo"
+    }
+  },
+  {
+    "id": 123,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 7,
+    "name": "Hot Tub",
+    "roomAmenitiesCategoryName": "Bathroom",
+    "nameAll": {
+      "en": "Hot Tub",
+      "ar": "حوض استحمام ساخن",
+      "fa": "وان داغ",
+      "ru": "Гидромассажная ванна",
+      "es": "Tina de hidromasaje"
+    }
+  },
+  {
+    "id": 124,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 7,
+    "name": "Spa Bathtub",
+    "roomAmenitiesCategoryName": "Bathroom",
+    "nameAll": {
+      "en": "Spa Bathtub",
+      "ar": "حوض استحمام سبا",
+      "fa": "وان آب معدنی",
+      "ru": "Гидромассажная ванна",
+      "es": "Bañera de hidromasaje"
+    }
+  },
+  {
+    "id": 125,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 7,
+    "name": "Spring Bath",
+    "roomAmenitiesCategoryName": "Bathroom",
+    "nameAll": {
+      "en": "Spring Bath",
+      "ar": "حمام ينبوع",
+      "fa": "حمام آب چشمه",
+      "ru": "Весенние источники",
+      "es": "Baño termal"
+    }
+  },
+  {
+    "id": 126,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 7,
+    "name": "Separate tub and shower",
+    "roomAmenitiesCategoryName": "Bathroom",
+    "nameAll": {
+      "en": "Separate tub and shower",
+      "ar": "حوض استحمام ودش منفصلان",
+      "fa": "وان و دوش جدا",
+      "ru": "Раздельные ванна и душ",
+      "es": "Bañera y ducha separadas"
+    }
+  },
+  {
+    "id": 127,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 7,
+    "name": "Sauna",
+    "roomAmenitiesCategoryName": "Bathroom",
+    "nameAll": {
+      "en": "Sauna",
+      "ar": "ساونا",
+      "fa": "سونا",
+      "ru": "Сауна",
+      "es": "Sauna"
+    }
+  },
+  {
+    "id": 128,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 7,
+    "parentAmenity": {
+      "id": 27,
+      "name": "Hairdryer"
+    },
+    "name": "Hairdryer (on request)",
+    "roomAmenitiesCategoryName": "Bathroom",
+    "nameAll": {
+      "en": "Hairdryer (on request)",
+      "ar": "مجفف شعر (عند الطلب)",
+      "fa": "سشوار (با درخواست)",
+      "ru": "Фен (по запросу)",
+      "es": "Secador de pelo (a solicitud)"
+    }
+  },
+  {
+    "id": 129,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 7,
+    "name": "Free toiletries",
+    "roomAmenitiesCategoryName": "Bathroom",
+    "nameAll": {
+      "en": "Free toiletries",
+      "ar": "لوازم استحمام مجانية",
+      "fa": "لوازم بهداشتی رایگان",
+      "ru": "Бесплатные туалетно-косметические принадлежности",
+      "es": "Artículos de aseo gratuitos"
+    }
+  },
+  {
+    "id": 130,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 7,
+    "name": "Designer toiletries",
+    "roomAmenitiesCategoryName": "Bathroom",
+    "nameAll": {
+      "en": "Designer toiletries",
+      "ar": "لوازم استحمام مصممة",
+      "fa": "لوازم بهداشتی دیزاینر",
+      "ru": "Дизайнерские туалетные принадлежности"
+    }
+  },
+  {
+    "id": 131,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 7,
+    "name": "Towels provided",
+    "roomAmenitiesCategoryName": "Bathroom",
+    "nameAll": {
+      "en": "Towels provided",
+      "ar": "مناشف متوفرة",
+      "fa": "حوله تامین شده است",
+      "ru": "Полотенца предоставляются",
+      "es": "Toallas incluidas"
+    }
+  },
+  {
+    "id": 132,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 7,
+    "name": "Bathrobes provided",
+    "roomAmenitiesCategoryName": "Bathroom",
+    "nameAll": {
+      "en": "Bathrobes provided",
+      "ar": "أردية حمام متوفرة",
+      "fa": "لباس حمام ارائه شده است",
+      "ru": "Предоставляются халаты",
+      "es": "Batas de baño incluidas"
+    }
+  },
+  {
+    "id": 133,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 7,
+    "parentAmenity": {
+      "id": 132,
+      "name": "Bathrobes provided"
+    },
+    "name": "Bathrobes (on request)",
+    "roomAmenitiesCategoryName": "Bathroom",
+    "nameAll": {
+      "en": "Bathrobes (on request)",
+      "ar": "أردية حمام (عند الطلب)",
+      "fa": "لباس حمام (با درخواست)",
+      "ru": "Халаты (по запросу)",
+      "es": "Batas de baño (a solicitud)"
+    }
+  },
+  {
+    "id": 134,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 7,
+    "name": "Slippers provided",
+    "roomAmenitiesCategoryName": "Bathroom",
+    "nameAll": {
+      "en": "Slippers provided",
+      "ar": "نعال متوفرة",
+      "fa": "دمپایی ارائه شده است",
+      "ru": "Тапочки предоставляются",
+      "es": "Zapatillas incluidas"
+    }
+  },
+  {
+    "id": 135,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 8,
+    "name": "Kitchenette",
+    "roomAmenitiesCategoryName": "Food & Drinks",
+    "nameAll": {
+      "en": "Kitchenette",
+      "ar": "مطبخ صغير",
+      "fa": "لوازم آشپزخانه",
+      "ru": "Небольшая кухня",
+      "es": "Cocineta"
+    }
+  },
+  {
+    "id": 136,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 8,
+    "name": "Shared Kitchenette",
+    "roomAmenitiesCategoryName": "Food & Drinks",
+    "nameAll": {
+      "en": "Shared Kitchenette",
+      "ar": "مطبخ صغير مشترك",
+      "fa": "لوازم آشپزخانه مشترک",
+      "ru": "Общая мини-кухня",
+      "es": "Cocineta compartida"
+    }
+  },
+  {
+    "id": 137,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 8,
+    "name": "Dishwasher",
+    "roomAmenitiesCategoryName": "Food & Drinks",
+    "nameAll": {
+      "en": "Dishwasher",
+      "ar": "غسالة الأواني",
+      "fa": "ماشین ظرفشویی",
+      "ru": "Посудомоечная машина",
+      "es": "Lavavajillas"
+    }
+  },
+  {
+    "id": 138,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 8,
+    "parentAmenity": {
+      "id": 38,
+      "name": "Microwave"
+    },
+    "name": "Microwave (on request)",
+    "roomAmenitiesCategoryName": "Food & Drinks",
+    "nameAll": {
+      "en": "Microwave (on request)",
+      "ar": "ميكروويف (عند الطلب)",
+      "fa": "مایکروفر (با درخواست)",
+      "ru": "Микроволновая печь (по запросу)",
+      "es": "Microondas (a solicitud)"
+    }
+  },
+  {
+    "id": 139,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 8,
+    "parentAmenity": {
+      "id": 38,
+      "name": "Microwave"
+    },
+    "name": "Microwave (surcharge)",
+    "roomAmenitiesCategoryName": "Food & Drinks",
+    "nameAll": {
+      "en": "Microwave (surcharge)",
+      "ar": "ميكروويف (تكلفة إضافية)",
+      "fa": "مایکروفر (با هزینه)",
+      "ru": "Микроволновая печь (за дополнительную плату)",
+      "es": "Microondas (cargo adicional)"
+    }
+  },
+  {
+    "id": 140,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 8,
+    "parentAmenity": {
+      "id": 82,
+      "name": "Refrigerator"
+    },
+    "name": "Refrigerator (on request)",
+    "roomAmenitiesCategoryName": "Food & Drinks",
+    "nameAll": {
+      "en": "Refrigerator (on request)",
+      "ar": "ثلاجة (عند الطلب)",
+      "fa": "یخچال (با درخواست)",
+      "ru": "Холодильник (по запросу)",
+      "es": "Refrigerador (a solicitud)"
+    }
+  },
+  {
+    "id": 141,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 8,
+    "parentAmenity": {
+      "id": 82,
+      "name": "Refrigerator"
+    },
+    "name": "Refrigerator (surcharge)",
+    "roomAmenitiesCategoryName": "Food & Drinks",
+    "nameAll": {
+      "en": "Refrigerator (surcharge)",
+      "ar": "ثلاجة (تكلفة إضافية)",
+      "fa": "یخچال (با هزینه)",
+      "ru": "Холодильник (за дополнительную плату)",
+      "es": "Refrigerador (cargo adicional)"
+    }
+  },
+  {
+    "id": 142,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 8,
+    "parentAmenity": {
+      "id": 143,
+      "name": "Minibar (free)"
+    },
+    "name": "Minibar",
+    "roomAmenitiesCategoryName": "Food & Drinks",
+    "nameAll": {
+      "en": "Minibar",
+      "ar": "ميني بار",
+      "fa": "مینی بار",
+      "ru": "Минибар",
+      "es": "Minibar"
+    }
+  },
+  {
+    "id": 143,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 8,
+    "name": "Minibar (free)",
+    "roomAmenitiesCategoryName": "Food & Drinks",
+    "nameAll": {
+      "en": "Minibar (free)",
+      "ar": "ميني بار (مجاني)",
+      "fa": "مینی بار (رایگان)",
+      "ru": "Мини-бар (бесплатно)",
+      "es": "Minibar gratuito"
+    }
+  },
+  {
+    "id": 144,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 8,
+    "name": "Electric Kettle",
+    "roomAmenitiesCategoryName": "Food & Drinks",
+    "nameAll": {
+      "en": "Electric Kettle",
+      "ar": "غلاية كهربائية",
+      "fa": "کتری برقی",
+      "ru": "Электрический чайник",
+      "es": "Hervidor eléctrico"
+    }
+  },
+  {
+    "id": 145,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 8,
+    "name": "Coffee maker",
+    "roomAmenitiesCategoryName": "Food & Drinks",
+    "nameAll": {
+      "en": "Coffee maker",
+      "ar": "ماكينة صنع القهوة",
+      "fa": "قهوه ساز",
+      "ru": "Кофеварка",
+      "es": "Cafetera"
+    }
+  },
+  {
+    "id": 146,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 8,
+    "name": "Free Coffee",
+    "roomAmenitiesCategoryName": "Food & Drinks",
+    "nameAll": {
+      "en": "Free Coffee",
+      "ar": "قهوة مجانية",
+      "fa": "قهوه رایگان",
+      "ru": "Бесплатный кофе",
+      "es": "Café gratuito"
+    }
+  },
+  {
+    "id": 147,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 8,
+    "name": "Free Tea",
+    "roomAmenitiesCategoryName": "Food & Drinks",
+    "nameAll": {
+      "en": "Free Tea",
+      "ar": "شاي مجاني",
+      "fa": "چای رایگان",
+      "ru": "Бесплатный чай",
+      "es": "Té gratuito"
+    }
+  },
+  {
+    "id": 148,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 8,
+    "name": "Free Bottled Water",
+    "roomAmenitiesCategoryName": "Food & Drinks",
+    "nameAll": {
+      "en": "Free Bottled Water",
+      "ar": "زجاجات مياه مجانية",
+      "fa": "آب بطری رایگان",
+      "ru": "Бесплатная бутилированная вода",
+      "es": "Agua embotellada gratuita"
+    }
+  },
+  {
+    "id": 149,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 9,
+    "name": "Accessible room",
+    "roomAmenitiesCategoryName": "Accessibility",
+    "nameAll": {
+      "en": "Accessible room",
+      "ar": "غرفة سهلة الوصول",
+      "fa": "اتاق دسترسی پذیر",
+      "ru": "Номер для людей с ограниченными физическими возможностями",
+      "es": "Habitación accesible"
+    }
+  },
+  {
+    "id": 150,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 9,
+    "name": "Accessible bathroom",
+    "roomAmenitiesCategoryName": "Accessibility",
+    "nameAll": {
+      "en": "Accessible bathroom",
+      "ar": "مرحاض سهل الوصول",
+      "fa": "حمام دسترسی پذیر",
+      "ru": "Ванная комната для людей с ограниченными возможностями",
+      "es": "Habitación accesible"
+    }
+  },
+  {
+    "id": 151,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 9,
+    "name": "Roll-in Shower",
+    "roomAmenitiesCategoryName": "Accessibility",
+    "nameAll": {
+      "en": "Roll-in Shower",
+      "ar": "دش قابل للطي",
+      "fa": "دوش مناسب معلولین",
+      "ru": "Душ для людей на инвалидной коляске",
+      "es": "Ducha accesible"
+    }
+  },
+  {
+    "id": 152,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 10,
+    "parentAmenity": {
+      "id": 32,
+      "name": "Internet access"
+    },
+    "name": "Internet access (surcharge)",
+    "roomAmenitiesCategoryName": "Entertainment",
+    "nameAll": {
+      "en": "Internet access (surcharge)",
+      "ar": "الوصول إلى الإنترنت (نظير تكلفة إضافية)",
+      "fa": "دسترسی اینترنت (با هزینه)",
+      "ru": "Доступ в Интернет (за дополнительную плату)",
+      "es": "Acceso a internet (cargo adicional)"
+    }
+  },
+  {
+    "id": 153,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 10,
+    "name": "Free Wifi",
+    "roomAmenitiesCategoryName": "Entertainment",
+    "nameAll": {
+      "en": "Free Wifi",
+      "ar": "واي فاي مجاني",
+      "fa": "وای فای رایگان",
+      "ru": "Бесплатный Wi-Fi",
+      "es": "Wifi gratuito"
+    }
+  },
+  {
+    "id": 154,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 10,
+    "parentAmenity": {
+      "id": 153,
+      "name": "Free Wifi"
+    },
+    "name": "Wifi (surcharge)",
+    "roomAmenitiesCategoryName": "Entertainment",
+    "nameAll": {
+      "en": "Wifi (surcharge)",
+      "ar": "واي فاي (مقابل تكلفة إضافية)",
+      "fa": "وای فای (با هزینه)",
+      "ru": "Wi-Fi (за дополнительную плату)",
+      "es": "Wifi (cargo adicional)"
+    }
+  },
+  {
+    "id": 155,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 10,
+    "parentAmenity": {
+      "id": 68,
+      "name": "Television"
+    },
+    "name": "Flat screen TV",
+    "roomAmenitiesCategoryName": "Entertainment",
+    "nameAll": {
+      "en": "Flat screen TV",
+      "ar": "تلفاز بشاشة مسطحة",
+      "fa": "تلویزیون صفحه تخت",
+      "ru": "Плазменный ТВ",
+      "es": "Televisor de pantalla plana"
+    }
+  },
+  {
+    "id": 156,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 10,
+    "parentAmenity": {
+      "id": 68,
+      "name": "Television"
+    },
+    "name": "Television (surcharge)",
+    "roomAmenitiesCategoryName": "Entertainment",
+    "nameAll": {
+      "en": "Television (surcharge)",
+      "ar": "تلفزيون (تكلفة إضافية)",
+      "fa": "تلویزیون (با هزینه)",
+      "ru": "Телевизор (за дополнительную плату)",
+      "es": "Televisión (cargo adicional)"
+    }
+  },
+  {
+    "id": 157,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 10,
+    "name": "Premium TV channels",
+    "roomAmenitiesCategoryName": "Entertainment",
+    "nameAll": {
+      "en": "Premium TV channels",
+      "ar": "قنوات تلفزيونية متميزة",
+      "fa": "شبکه‌های تلویزیون ممتاز",
+      "ru": "Телеканалы премиум-класса",
+      "es": "Canales de TV premium"
+    }
+  },
+  {
+    "id": 158,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 10,
+    "name": "Satellite TV channels",
+    "roomAmenitiesCategoryName": "Entertainment",
+    "nameAll": {
+      "en": "Satellite TV channels",
+      "ar": "قنوات فضائية",
+      "fa": "شبکه‌های ماهواره‌ای",
+      "ru": "Спутниковые телеканалы",
+      "es": "Canales de TV vía satélite"
+    }
+  },
+  {
+    "id": 159,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 10,
+    "name": "Streaming Channels Available",
+    "roomAmenitiesCategoryName": "Entertainment",
+    "nameAll": {
+      "en": "Streaming Channels Available",
+      "ar": "قنوات البث متاحة",
+      "fa": "شبکه‌های پخش فیلم موجود است",
+      "ru": "Доступны стриминговые каналы",
+      "es": "Canales en streaming disponibles"
+    }
+  },
+  {
+    "id": 160,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 11,
+    "name": "Turndown service",
+    "roomAmenitiesCategoryName": "Others",
+    "nameAll": {
+      "en": "Turndown service",
+      "ar": "خدمة ترتيب الأسرّة",
+      "fa": "سرویس مرتب‌سازی اتاق",
+      "ru": "Подготовка постели ко сну",
+      "es": "Servicio de cobertura"
+    }
+  },
+  {
+    "id": 161,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 11,
+    "name": "Free local calls",
+    "roomAmenitiesCategoryName": "Others",
+    "nameAll": {
+      "en": "Free local calls",
+      "ar": "مكالمات محلية مجانية",
+      "fa": "تلفن محلی رایگان",
+      "ru": "Бесплатные местные звонки",
+      "es": "Llamadas locales gratuitas"
+    }
+  },
+  {
+    "id": 162,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 11,
+    "name": "Free long-distance calls",
+    "roomAmenitiesCategoryName": "Others",
+    "nameAll": {
+      "en": "Free long-distance calls",
+      "ar": "مكالمات مجانية بعيدة المدى",
+      "fa": "تلفن راه دور رایگان",
+      "ru": "Бесплатные междугородние звонки",
+      "es": "Llamadas de larga distancia gratuitas"
+    }
+  },
+  {
+    "id": 163,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 11,
+    "name": "Soundproofed room",
+    "roomAmenitiesCategoryName": "Others",
+    "nameAll": {
+      "en": "Soundproofed room",
+      "ar": "غرفة عازلة للصوت",
+      "fa": "اتاق ضد صدا",
+      "ru": "Звукоизолированная комната",
+      "es": "Habitación insonorizada"
+    }
+  },
+  {
+    "id": 164,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 11,
+    "name": "Fireplace",
+    "roomAmenitiesCategoryName": "Others",
+    "nameAll": {
+      "en": "Fireplace",
+      "ar": "مدفأة",
+      "fa": "شومینه",
+      "ru": "Камин",
+      "es": "Chimenea"
+    }
+  },
+  {
+    "id": 165,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 11,
+    "name": "Air Purifier",
+    "roomAmenitiesCategoryName": "Others",
+    "nameAll": {
+      "en": "Air Purifier",
+      "ar": "أجهزة تنقية الهواء",
+      "fa": "تصفیه‌کننده هوا",
+      "ru": "Воздухоочиститель",
+      "es": "Purificador de aire"
+    }
+  },
+  {
+    "id": 166,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 11,
+    "name": "Smoke detector",
+    "roomAmenitiesCategoryName": "Others",
+    "nameAll": {
+      "en": "Smoke detector",
+      "ar": "كاشف الدخان",
+      "fa": "حسگر دود",
+      "ru": "Детектор дыма",
+      "es": "Detector de humo"
+    }
+  },
+  {
+    "id": 167,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 11,
+    "name": "Private yard",
+    "roomAmenitiesCategoryName": "Others",
+    "nameAll": {
+      "en": "Private yard",
+      "ar": "ساحة خاصة",
+      "fa": "حیاط خصوصی",
+      "ru": "Частный двор",
+      "es": "Jardín privado"
+    }
+  },
+  {
+    "id": 168,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 11,
+    "name": "Private patio",
+    "roomAmenitiesCategoryName": "Others",
+    "nameAll": {
+      "en": "Private patio",
+      "ar": "فناء خاص",
+      "fa": "پاسیو خصوصی",
+      "ru": "Частный внутренний дворик",
+      "es": "Patio privado"
+    }
+  },
+  {
+    "id": 169,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 11,
+    "name": "Balcony",
+    "roomAmenitiesCategoryName": "Others",
+    "nameAll": {
+      "en": "Balcony",
+      "ar": "شرفة",
+      "fa": "بالکن",
+      "ru": "Балкон",
+      "es": "Balcón"
+    }
+  },
+  {
+    "id": 170,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 11,
+    "name": "Terrace",
+    "roomAmenitiesCategoryName": "Others",
+    "nameAll": {
+      "en": "Terrace",
+      "ar": "تراس",
+      "fa": "تراس",
+      "ru": "Терраса",
+      "es": "Terraza"
+    }
+  },
+  {
+    "id": 171,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 11,
+    "name": "Plunge Pool",
+    "roomAmenitiesCategoryName": "Others",
+    "nameAll": {
+      "en": "Plunge Pool",
+      "ar": "حوض الغطس",
+      "fa": "استخر غوطه وری",
+      "ru": "Небольшой бассейн",
+      "es": "Piscina pequeña"
+    }
+  },
+  {
+    "id": 172,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 11,
+    "name": "Washer-Dryer",
+    "roomAmenitiesCategoryName": "Others",
+    "nameAll": {
+      "en": "Washer-Dryer",
+      "ar": "مجفف غسالة",
+      "fa": "ماشین لباسشویی-خشک‌کن",
+      "ru": "Стирально-сушильная машина",
+      "es": "Lavadora-secadora"
+    }
+  },
+  {
+    "id": 173,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 11,
+    "name": "Washing machine",
+    "roomAmenitiesCategoryName": "Others",
+    "nameAll": {
+      "en": "Washing machine",
+      "ar": "غسالة",
+      "fa": "ماشین لباسشویی",
+      "ru": "Стиральная машина",
+      "es": "Lavadora"
+    }
+  },
+  {
+    "id": 174,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 11,
+    "parentAmenity": {
+      "id": 34,
+      "name": "Iron & ironing board"
+    },
+    "name": "Iron & ironing board (on request)",
+    "roomAmenitiesCategoryName": "Others",
+    "nameAll": {
+      "en": "Iron & ironing board (on request)",
+      "ar": "مكواة وطاولة للكي (عند الطلب)",
+      "fa": "اتو و میز اتو (با درخواست)",
+      "ru": "Утюг и гладильная доска (по запросу)",
+      "es": "Plancha y tabla de planchar (a solicitud)"
+    }
+  },
+  {
+    "id": 175,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 11,
+    "name": "Laundry Services",
+    "roomAmenitiesCategoryName": "Others",
+    "nameAll": {
+      "en": "Laundry Services",
+      "ar": "خدمات الغسيل",
+      "fa": "خدمات خشکشویی",
+      "ru": "Услуги прачечной",
+      "es": "Servicio de lavandería"
+    }
+  },
+  {
+    "id": 176,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 11,
+    "name": "Room Service",
+    "roomAmenitiesCategoryName": "Others",
+    "nameAll": {
+      "en": "Room Service",
+      "ar": "خدمة الغرف",
+      "fa": "خدمات اتاق",
+      "ru": "Доставка еды и напитков в номер",
+      "es": "Servicio a la habitación"
+    }
+  },
+  {
+    "id": 177,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 11,
+    "name": "Pet Friendly",
+    "roomAmenitiesCategoryName": "Others",
+    "nameAll": {
+      "en": "Pet Friendly",
+      "ar": "صديق للحيوانات الاليفة",
+      "fa": "دوست‌دار حیوانات خانگی",
+      "ru": "Допускается размещение с домашними животными",
+      "es": "Se admiten mascotas"
+    }
+  },
+  {
+    "id": 178,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 11,
+    "name": "Male only",
+    "roomAmenitiesCategoryName": "Others",
+    "nameAll": {
+      "en": "Male only",
+      "ar": "للذكور فقط",
+      "fa": "فقط آقایان",
+      "ru": "Только для мужчин",
+      "es": "Solo hombres"
+    }
+  },
+  {
+    "id": 179,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 11,
+    "name": "Female only",
+    "roomAmenitiesCategoryName": "Others",
+    "nameAll": {
+      "en": "Female only",
+      "ar": "للإناث فقط",
+      "fa": "فقط خانم‌ها",
+      "ru": "Только для женщин",
+      "es": "Solo mujeres"
+    }
+  },
+  {
+    "id": 180,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 11,
+    "name": "Adults only",
+    "roomAmenitiesCategoryName": "Others",
+    "nameAll": {
+      "en": "Adults only",
+      "ar": "للبالغين فقط",
+      "fa": "فقط افراد بزرگسال",
+      "ru": "Только для взрослых",
+      "es": "Solo adultos"
+    }
+  },
+  {
+    "id": 181,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 11,
+    "name": "Smoking allowed",
+    "roomAmenitiesCategoryName": "Others",
+    "nameAll": {
+      "en": "Smoking allowed",
+      "ar": "مسموح التدخين",
+      "fa": "سیگار کشیدن مجاز است",
+      "ru": "Курение разрешено",
+      "es": "Se permite fumar"
+    }
+  },
+  {
+    "id": 182,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 11,
+    "name": "Smoking not allowed",
+    "roomAmenitiesCategoryName": "Others",
+    "nameAll": {
+      "en": "Smoking not allowed",
+      "ar": "التدخين غير مسموح به",
+      "fa": "سیگار کشیدن مجاز نیست",
+      "ru": "Курение запрещено",
+      "es": "Prohibido fumar"
+    }
+  },
+  {
+    "id": 183,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 11,
+    "name": "Lounge Access",
+    "roomAmenitiesCategoryName": "Others",
+    "nameAll": {
+      "en": "Lounge Access",
+      "ar": "صالة المطار",
+      "fa": "دسترسی به لانژ",
+      "ru": "Доступ в лаундж",
+      "ms": "Akses ruang rehat",
+      "es": "Acceso al salón"
+    }
+  },
+  {
+    "id": 184,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 11,
+    "name": "Connecting Rooms Available",
+    "roomAmenitiesCategoryName": "Others",
+    "nameAll": {
+      "en": "Connecting Rooms Available",
+      "ar": "غرف متصلة متاحة",
+      "fa": "اتاق متصل موجود است",
+      "ru": "Доступны смежные номера",
+      "es": "Habitaciones comunicadas disponibles"
+    }
+  },
+  {
+    "id": 185,
+    "priority": 2,
+    "roomAmenitiesCategoryId": 11,
+    "name": "Concierge services",
+    "roomAmenitiesCategoryName": "Others",
+    "nameAll": {
+      "en": "Concierge services",
+      "ar": "خدمات الاستقبال والإرشاد",
+      "fa": "خدمات پشتیبانی",
+      "ru": "Услуги консьержа",
+      "es": "Servicios de conserjería"
+    }
+  }
+]

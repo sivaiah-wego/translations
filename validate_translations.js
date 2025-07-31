@@ -3,12 +3,33 @@ const path = require('path');
 const OpenAI = require('openai');
 require('dotenv').config();
 
-// Configuration
-const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY;
-const VALIDATION_MODEL = "anthropic/claude-3-haiku"; // Different model for validation
-const TEMPERATURE = 0.1; // Lower temperature for more consistent validation
+// ============================================================================
+// CONFIGURATION SETTINGS
+// ============================================================================
 
-// Language mapping for validation
+// API Configuration
+const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY;
+
+// Validation Model: Using GPT-3.5-Turbo for cost-effective validation
+const VALIDATION_MODEL = "openai/gpt-3.5-turbo";
+
+// Temperature Setting: 0.1 for consistent validation results
+const VALIDATION_TEMPERATURE = 0.1;
+
+// Validation Settings
+const DEFAULT_SAMPLE_SIZE = 5;  // Number of translations to validate per language
+const DELAY_BETWEEN_VALIDATIONS = 1000; // Milliseconds to avoid rate limiting
+
+// Quality Thresholds
+const EXCELLENT_THRESHOLD = 9.0;
+const GOOD_THRESHOLD = 7.5;
+const ACCEPTABLE_THRESHOLD = 6.0;
+
+// ============================================================================
+// LANGUAGE MAPPING FOR VALIDATION
+// ============================================================================
+
+// Human-readable language names for better validation prompts
 const LANGUAGE_NAMES = {
     'ar': 'Arabic',
     'de': 'German', 
@@ -43,221 +64,506 @@ const LANGUAGE_NAMES = {
     'zhTw': 'Taiwan Traditional Chinese'
 };
 
-class TranslationValidator {
+// ============================================================================
+// ENHANCED TRANSLATION VALIDATOR CLASS
+// ============================================================================
+
+/**
+ * EnhancedTranslationValidator - Advanced validation with per-language scoring
+ * 
+ * This enhanced version includes:
+ * 1. Per-language quality scoring
+ * 2. Detailed quality analysis
+ * 3. Specific improvement recommendations
+ * 4. Quality trend analysis
+ * 5. Export capabilities for quality reports
+ */
+class EnhancedTranslationValidator {
+    
+    /**
+     * Initialize the validator with OpenAI client
+     * @throws {Error} If API key is not configured
+     */
     constructor() {
+        // Validate API key configuration
         if (!OPENROUTER_API_KEY) {
             throw new Error("Please set your OPENROUTER_API_KEY in .env file");
         }
 
-        this.client = new OpenAI({
+        // Initialize OpenAI client for validation
+        this.openaiClient = new OpenAI({
             apiKey: OPENROUTER_API_KEY,
             baseURL: "https://openrouter.ai/api/v1"
         });
 
+        // Store validation results and quality metrics
         this.validationResults = [];
-        this.issues = [];
+        this.qualityMetrics = {};
+        this.languageScores = {};
+        this.improvementRecommendations = {};
     }
 
-    async loadData(filePath) {
-        const csv = require('csv-parser');
-        return new Promise((resolve, reject) => {
-            const results = [];
-            fs.createReadStream(filePath)
-                .pipe(csv())
-                .on('data', (data) => results.push(data))
-                .on('end', () => resolve(results))
-                .on('error', reject);
-        });
+    /**
+     * Load JSON data from file
+     * @param {string} filePath - Path to the JSON file
+     * @returns {Promise<Array>} Array of amenity objects
+     */
+    async loadAmenitiesFromJson(filePath = 'output/translated_amenities.json') {
+        try {
+            const data = fs.readFileSync(filePath, 'utf8');
+            const amenities = JSON.parse(data);
+            console.log(`📊 Loaded ${amenities.length} amenities from ${filePath}`);
+            return amenities;
+        } catch (error) {
+            console.error(`❌ Failed to load amenities from ${filePath}: ${error.message}`);
+            throw error;
+        }
     }
 
-    async validateTranslation(english, translation, languageCode) {
+    /**
+     * Create enhanced validation prompt for detailed assessment
+     * @param {string} englishText - Original English text
+     * @param {string} translatedText - Translated text to validate
+     * @param {string} languageCode - Language code (e.g., 'es', 'fr')
+     * @returns {string} Enhanced validation prompt
+     */
+    createEnhancedValidationPrompt(englishText, translatedText, languageCode) {
         const languageName = LANGUAGE_NAMES[languageCode];
         
-        const prompt = `You are a professional translation validator. Please validate the following translation:
+        return `You are a professional translation validator specializing in hotel and hospitality terminology.
 
-English: "${english}"
-${languageName} Translation: "${translation}"
+Please validate the following translation for a hotel booking website:
 
-Please provide a validation score from 1-10 (where 10 is perfect) and brief feedback.
-Consider:
-1. Accuracy of meaning
-2. Cultural appropriateness for hotel amenities
-3. Natural language flow
-4. Technical correctness
+ORIGINAL ENGLISH: "${englishText}"
+TRANSLATED ${languageName.toUpperCase()}: "${translatedText}"
 
-Respond in this exact format:
-Score: [1-10]
-Feedback: [brief explanation]
-Issues: [list any issues found, or "None" if perfect]`;
+VALIDATION CRITERIA:
+1. Accuracy (30%): Does the translation convey the same meaning as the original?
+2. Cultural Appropriateness (25%): Is the translation suitable for hotel amenities and culturally appropriate?
+3. Natural Flow (25%): Does the translation sound natural and native in the target language?
+4. Technical Correctness (20%): Are grammar, spelling, and terminology correct?
 
+Please provide your assessment in this exact format:
+Score: [1-10] (where 10 is perfect)
+Accuracy: [brief assessment]
+Cultural: [brief assessment]
+Natural: [brief assessment]
+Technical: [brief assessment]
+Issues: [list any specific issues found, or "None" if perfect]
+Recommendation: [specific improvement suggestion, or "Excellent" if perfect]
+
+Guidelines:
+- Score 9-10: Excellent translation, minor issues at most
+- Score 7-8: Good translation with some room for improvement
+- Score 5-6: Acceptable but needs improvement
+- Score 1-4: Poor translation with significant issues`;
+    }
+
+    /**
+     * Validate a single translation using enhanced prompts
+     * @param {string} englishText - Original English text
+     * @param {string} translatedText - Translated text to validate
+     * @param {string} languageCode - Language code
+     * @returns {Promise<Object>} Enhanced validation result
+     */
+    async validateSingleTranslation(englishText, translatedText, languageCode) {
+        const validationPrompt = this.createEnhancedValidationPrompt(englishText, translatedText, languageCode);
+        
         try {
-            const response = await this.client.chat.completions.create({
+            // Make API call to validate translation
+            const apiResponse = await this.openaiClient.chat.completions.create({
                 model: VALIDATION_MODEL,
-                messages: [{ role: "user", content: prompt }],
-                temperature: TEMPERATURE,
-                max_tokens: 200
+                messages: [{ role: "user", content: validationPrompt }],
+                temperature: VALIDATION_TEMPERATURE,
+                max_tokens: 300
             });
 
-            const result = response.choices[0].message.content;
+            const aiResponse = apiResponse.choices[0].message.content;
             
-            // Parse the response
-            const scoreMatch = result.match(/Score:\s*(\d+)/);
-            const feedbackMatch = result.match(/Feedback:\s*(.+?)(?=\n|$)/);
-            const issuesMatch = result.match(/Issues:\s*(.+?)(?=\n|$)/);
-
+            // Parse the enhanced AI response
+            const validationResult = this.parseEnhancedValidationResponse(aiResponse);
+            
             return {
-                score: scoreMatch ? parseInt(scoreMatch[1]) : 0,
-                feedback: feedbackMatch ? feedbackMatch[1].trim() : 'No feedback provided',
-                issues: issuesMatch ? issuesMatch[1].trim() : 'No issues listed',
-                rawResponse: result
+                score: validationResult.score,
+                accuracy: validationResult.accuracy,
+                cultural: validationResult.cultural,
+                natural: validationResult.natural,
+                technical: validationResult.technical,
+                issues: validationResult.issues,
+                recommendation: validationResult.recommendation,
+                rawResponse: aiResponse
             };
+            
         } catch (error) {
-            console.error(`❌ Validation error for "${english}": ${error.message}`);
+            console.error(`❌ Validation error for "${englishText}": ${error.message}`);
+            
+            // Return error result
             return {
                 score: 0,
-                feedback: 'Validation failed',
+                accuracy: 'Validation failed',
+                cultural: 'Validation failed',
+                natural: 'Validation failed',
+                technical: 'Validation failed',
                 issues: error.message,
+                recommendation: 'Check API configuration',
                 rawResponse: ''
             };
         }
     }
 
-    async validateSample(data, languageCode, sampleSize = 10) {
-        console.log(`🔍 Validating ${languageCode} (${LANGUAGE_NAMES[languageCode]}) translations...`);
+    /**
+     * Parse enhanced AI validation response
+     * @param {string} aiResponse - Raw AI response
+     * @returns {Object} Parsed validation result
+     */
+    parseEnhancedValidationResponse(aiResponse) {
+        // Extract score using regex
+        const scoreMatch = aiResponse.match(/Score:\s*(\d+)/);
+        const score = scoreMatch ? parseInt(scoreMatch[1]) : 0;
         
-        const languageData = data.filter(row => row[languageCode] && row[languageCode].trim() !== '');
+        // Extract accuracy assessment
+        const accuracyMatch = aiResponse.match(/Accuracy:\s*(.+?)(?=\n|$)/);
+        const accuracy = accuracyMatch ? accuracyMatch[1].trim() : 'No accuracy assessment';
         
-        if (languageData.length === 0) {
-            console.log(`⚠️  No translations found for ${languageCode}`);
-            return;
-        }
-
-        // Take a random sample
-        const shuffled = languageData.sort(() => 0.5 - Math.random());
-        const sample = shuffled.slice(0, Math.min(sampleSize, languageData.length));
+        // Extract cultural assessment
+        const culturalMatch = aiResponse.match(/Cultural:\s*(.+?)(?=\n|$)/);
+        const cultural = culturalMatch ? culturalMatch[1].trim() : 'No cultural assessment';
         
-        console.log(`📊 Validating ${sample.length} random samples out of ${languageData.length} total translations`);
-
-        const validations = [];
-        let totalScore = 0;
-
-        for (let i = 0; i < sample.length; i++) {
-            const row = sample[i];
-            const english = row.en;
-            const translation = row[languageCode];
-            
-            console.log(`  ${i + 1}/${sample.length}: "${english}" → "${translation}"`);
-            
-            const validation = await this.validateTranslation(english, translation, languageCode);
-            validations.push({
-                id: row.id,
-                english,
-                translation,
-                ...validation
-            });
-            
-            totalScore += validation.score;
-            
-            // Add delay to avoid rate limiting
-            await new Promise(resolve => setTimeout(resolve, 1000));
-        }
-
-        const averageScore = totalScore / sample.length;
+        // Extract natural flow assessment
+        const naturalMatch = aiResponse.match(/Natural:\s*(.+?)(?=\n|$)/);
+        const natural = naturalMatch ? naturalMatch[1].trim() : 'No natural flow assessment';
         
-        this.validationResults.push({
-            language: languageCode,
-            languageName: LANGUAGE_NAMES[languageCode],
-            sampleSize: sample.length,
-            totalTranslations: languageData.length,
-            averageScore,
-            validations
-        });
-
-        console.log(`✅ ${languageCode} validation complete - Average score: ${averageScore.toFixed(2)}/10\n`);
+        // Extract technical assessment
+        const technicalMatch = aiResponse.match(/Technical:\s*(.+?)(?=\n|$)/);
+        const technical = technicalMatch ? technicalMatch[1].trim() : 'No technical assessment';
+        
+        // Extract issues
+        const issuesMatch = aiResponse.match(/Issues:\s*(.+?)(?=\n|$)/);
+        const issues = issuesMatch ? issuesMatch[1].trim() : 'No issues listed';
+        
+        // Extract recommendation
+        const recommendationMatch = aiResponse.match(/Recommendation:\s*(.+?)(?=\n|$)/);
+        const recommendation = recommendationMatch ? recommendationMatch[1].trim() : 'No recommendation provided';
+        
+        return { 
+            score, 
+            accuracy, 
+            cultural, 
+            natural, 
+            technical, 
+            issues, 
+            recommendation 
+        };
     }
 
-    async runValidation(inputFile = 'data/results.csv') {
-        console.log("🔍 Translation Validation Tool");
+    /**
+     * Validate translations for a specific language with detailed analysis
+     * @param {Array} amenities - Amenities data
+     * @param {string} languageCode - Language code
+     * @param {string} languageName - Language name
+     * @param {number} sampleSize - Number of translations to validate
+     * @returns {Promise<Object>} Detailed validation results
+     */
+    async validateLanguage(amenities, languageCode, languageName, sampleSize = DEFAULT_SAMPLE_SIZE) {
+        console.log(`🔍 Validating ${languageName} (${languageCode}) translations...`);
+        
+        // Get amenities with translations for this language
+        const translatedAmenities = amenities.filter(amenity => {
+            if (amenity.nameAll && amenity.nameAll[languageCode]) {
+                return amenity.nameAll[languageCode].trim() !== '';
+            }
+            return amenity[languageCode] && amenity[languageCode].trim() !== '';
+        });
+        
+        if (translatedAmenities.length === 0) {
+            console.log(`⚠️  No ${languageName} translations found for validation`);
+            return {
+                languageCode,
+                languageName,
+                sampleSize: 0,
+                totalTranslations: 0,
+                averageScore: 0,
+                qualityLevel: 'NO_TRANSLATIONS',
+                validationResults: [],
+                qualityBreakdown: {
+                    accuracy: 0,
+                    cultural: 0,
+                    natural: 0,
+                    technical: 0
+                }
+            };
+        }
+
+        // Select random sample for validation
+        const shuffledData = translatedAmenities.sort(() => 0.5 - Math.random());
+        const sampleData = shuffledData.slice(0, Math.min(sampleSize, translatedAmenities.length));
+        
+        console.log(`📊 Validating ${sampleData.length} random samples out of ${translatedAmenities.length} total translations`);
+
+        const validationResults = [];
+        let totalScore = 0;
+        let totalAccuracy = 0;
+        let totalCultural = 0;
+        let totalNatural = 0;
+        let totalTechnical = 0;
+
+        // Validate each sample translation
+        for (let i = 0; i < sampleData.length; i++) {
+            const currentRow = sampleData[i];
+            const englishText = currentRow.name || currentRow.en;
+            const translatedText = currentRow.nameAll && currentRow.nameAll[languageCode] 
+                ? currentRow.nameAll[languageCode] 
+                : currentRow[languageCode];
+            
+            console.log(`  ${i + 1}/${sampleData.length}: "${englishText}" → "${translatedText}"`);
+            
+            // Validate this translation
+            const validationResult = await this.validateSingleTranslation(
+                englishText, 
+                translatedText, 
+                languageCode
+            );
+            
+            // Store validation result
+            validationResults.push({
+                id: currentRow.id,
+                englishText,
+                translatedText,
+                score: validationResult.score,
+                accuracy: validationResult.accuracy,
+                cultural: validationResult.cultural,
+                natural: validationResult.natural,
+                technical: validationResult.technical,
+                issues: validationResult.issues,
+                recommendation: validationResult.recommendation
+            });
+            
+            totalScore += validationResult.score;
+            totalAccuracy += this.extractScoreFromAssessment(validationResult.accuracy);
+            totalCultural += this.extractScoreFromAssessment(validationResult.cultural);
+            totalNatural += this.extractScoreFromAssessment(validationResult.natural);
+            totalTechnical += this.extractScoreFromAssessment(validationResult.technical);
+            
+            // Add delay to avoid API rate limiting
+            await new Promise(resolve => setTimeout(resolve, DELAY_BETWEEN_VALIDATIONS));
+        }
+
+        // Calculate average scores
+        const averageScore = totalScore / sampleData.length;
+        const averageAccuracy = totalAccuracy / sampleData.length;
+        const averageCultural = totalCultural / sampleData.length;
+        const averageNatural = totalNatural / sampleData.length;
+        const averageTechnical = totalTechnical / sampleData.length;
+
+        // Determine quality level
+        const qualityLevel = this.determineQualityLevel(averageScore);
+
+        // Store language validation results
+        const languageResult = {
+            languageCode,
+            languageName,
+            sampleSize: sampleData.length,
+            totalTranslations: translatedAmenities.length,
+            averageScore,
+            qualityLevel,
+            validationResults,
+            qualityBreakdown: {
+                accuracy: averageAccuracy,
+                cultural: averageCultural,
+                natural: averageNatural,
+                technical: averageTechnical
+            }
+        };
+
+        this.validationResults.push(languageResult);
+        this.languageScores[languageCode] = averageScore;
+
+        console.log(`✅ ${languageName} validation complete - Average score: ${averageScore.toFixed(2)}/10 (${qualityLevel})\n`);
+
+        return languageResult;
+    }
+
+    /**
+     * Extract numerical score from assessment text
+     * @param {string} assessment - Assessment text
+     * @returns {number} Numerical score (0-10)
+     */
+    extractScoreFromAssessment(assessment) {
+        const lowerAssessment = assessment.toLowerCase();
+        
+        if (lowerAssessment.includes('excellent') || lowerAssessment.includes('perfect')) return 9.5;
+        if (lowerAssessment.includes('very good') || lowerAssessment.includes('good')) return 8.0;
+        if (lowerAssessment.includes('acceptable') || lowerAssessment.includes('adequate')) return 6.5;
+        if (lowerAssessment.includes('poor') || lowerAssessment.includes('bad')) return 3.0;
+        if (lowerAssessment.includes('failed') || lowerAssessment.includes('error')) return 0;
+        
+        return 5.0; // Default score
+    }
+
+    /**
+     * Determine quality level based on score
+     * @param {number} score - Average score
+     * @returns {string} Quality level
+     */
+    determineQualityLevel(score) {
+        if (score >= EXCELLENT_THRESHOLD) return 'EXCELLENT';
+        if (score >= GOOD_THRESHOLD) return 'GOOD';
+        if (score >= ACCEPTABLE_THRESHOLD) return 'ACCEPTABLE';
+        return 'NEEDS_IMPROVEMENT';
+    }
+
+    /**
+     * Run validation for all languages in the dataset
+     * @param {string} inputFilePath - Path to JSON file (default: 'output/translated_amenities.json')
+     */
+    async runValidation(inputFilePath = 'output/translated_amenities.json') {
+        console.log("🔍 Enhanced Translation Validation Tool");
         console.log("=" * 50);
         
         try {
-            const data = await this.loadData(inputFile);
-            console.log(`📊 Loaded ${data.length} amenities from ${inputFile}`);
+            // Load JSON data
+            const amenities = await this.loadAmenitiesFromJson(inputFilePath);
+            console.log(`📊 Loaded ${amenities.length} amenities from ${inputFilePath}`);
             
-            const languageColumns = Object.keys(LANGUAGE_NAMES);
-            console.log(`🌍 Found ${languageColumns.length} language columns to validate\n`);
+            // Get all language codes to validate
+            const languageCodes = Object.keys(LANGUAGE_NAMES);
+            console.log(`🌍 Found ${languageCodes.length} language columns to validate\n`);
 
-            // Validate a sample of translations for each language
-            for (const languageCode of languageColumns) {
-                await this.validateSample(data, languageCode, 5); // Validate 5 samples per language
+            // Validate translations for each language
+            for (const languageCode of languageCodes) {
+                const languageName = LANGUAGE_NAMES[languageCode];
+                await this.validateLanguage(amenities, languageCode, languageName, 5);
             }
 
-            this.generateReport();
+            // Generate and display enhanced validation report
+            this.generateEnhancedValidationReport();
             
         } catch (error) {
             console.error(`❌ Validation failed: ${error.message}`);
         }
     }
 
-    generateReport() {
-        console.log("\n📊 VALIDATION REPORT");
+    /**
+     * Generate comprehensive enhanced validation report
+     */
+    generateEnhancedValidationReport() {
+        console.log("\n📊 ENHANCED VALIDATION REPORT");
         console.log("=" * 50);
 
-        let overallAverage = 0;
+        let overallAverageScore = 0;
         let totalValidations = 0;
+        let excellentCount = 0;
+        let goodCount = 0;
+        let acceptableCount = 0;
+        let needsImprovementCount = 0;
 
-        this.validationResults.forEach(result => {
-            console.log(`\n🌍 ${result.languageName} (${result.language})`);
-            console.log(`   Sample size: ${result.sampleSize}/${result.totalTranslations}`);
-            console.log(`   Average score: ${result.averageScore.toFixed(2)}/10`);
+        // Process results for each language
+        this.validationResults.forEach(languageResult => {
+            console.log(`\n🌍 ${languageResult.languageName} (${languageResult.languageCode})`);
+            console.log(`   Sample size: ${languageResult.sampleSize}/${languageResult.totalTranslations}`);
+            console.log(`   Average score: ${languageResult.averageScore.toFixed(2)}/10`);
+            console.log(`   Quality level: ${languageResult.qualityLevel}`);
+            
+            // Show quality breakdown
+            const breakdown = languageResult.qualityBreakdown;
+            console.log(`   Quality breakdown:`);
+            console.log(`     Accuracy: ${breakdown.accuracy.toFixed(2)}/10`);
+            console.log(`     Cultural: ${breakdown.cultural.toFixed(2)}/10`);
+            console.log(`     Natural: ${breakdown.natural.toFixed(2)}/10`);
+            console.log(`     Technical: ${breakdown.technical.toFixed(2)}/10`);
             
             // Show issues for low-scoring translations
-            const lowScores = result.validations.filter(v => v.score < 7);
-            if (lowScores.length > 0) {
-                console.log(`   ⚠️  ${lowScores.length} translations scored below 7:`);
-                lowScores.forEach(v => {
-                    console.log(`      "${v.english}" → "${v.translation}" (Score: ${v.score})`);
-                    console.log(`      Issues: ${v.issues}`);
+            const lowQualityTranslations = languageResult.validationResults.filter(v => v.score < 7);
+            if (lowQualityTranslations.length > 0) {
+                console.log(`   ⚠️  ${lowQualityTranslations.length} translations scored below 7:`);
+                lowQualityTranslations.forEach(translation => {
+                    console.log(`      "${translation.englishText}" → "${translation.translatedText}" (Score: ${translation.score})`);
+                    console.log(`      Issues: ${translation.issues}`);
+                    console.log(`      Recommendation: ${translation.recommendation}`);
                 });
             }
 
-            overallAverage += result.averageScore * result.sampleSize;
-            totalValidations += result.sampleSize;
+            // Accumulate scores for overall statistics
+            overallAverageScore += languageResult.averageScore * languageResult.sampleSize;
+            totalValidations += languageResult.sampleSize;
+            
+            // Count quality levels
+            switch (languageResult.qualityLevel) {
+                case 'EXCELLENT': excellentCount++; break;
+                case 'GOOD': goodCount++; break;
+                case 'ACCEPTABLE': acceptableCount++; break;
+                case 'NEEDS_IMPROVEMENT': needsImprovementCount++; break;
+            }
         });
 
-        overallAverage = overallAverage / totalValidations;
+        // Calculate overall average
+        overallAverageScore = overallAverageScore / totalValidations;
 
+        // Display overall results
         console.log(`\n📈 OVERALL RESULTS`);
         console.log(`   Total validations: ${totalValidations}`);
-        console.log(`   Overall average score: ${overallAverage.toFixed(2)}/10`);
+        console.log(`   Overall average score: ${overallAverageScore.toFixed(2)}/10`);
+        console.log(`   Quality distribution:`);
+        console.log(`     Excellent (≥${EXCELLENT_THRESHOLD}): ${excellentCount} languages`);
+        console.log(`     Good (≥${GOOD_THRESHOLD}): ${goodCount} languages`);
+        console.log(`     Acceptable (≥${ACCEPTABLE_THRESHOLD}): ${acceptableCount} languages`);
+        console.log(`     Needs Improvement (<${ACCEPTABLE_THRESHOLD}): ${needsImprovementCount} languages`);
         
-        if (overallAverage >= 8) {
-            console.log(`   🎉 Excellent translation quality!`);
-        } else if (overallAverage >= 6) {
-            console.log(`   ✅ Good translation quality`);
+        // Provide quality assessment
+        if (overallAverageScore >= EXCELLENT_THRESHOLD) {
+            console.log(`   🎉 Excellent overall translation quality!`);
+        } else if (overallAverageScore >= GOOD_THRESHOLD) {
+            console.log(`   ✅ Good overall translation quality`);
+        } else if (overallAverageScore >= ACCEPTABLE_THRESHOLD) {
+            console.log(`   ⚠️  Acceptable translation quality, some improvements needed`);
         } else {
-            console.log(`   ⚠️  Translation quality needs improvement`);
+            console.log(`   ❌ Translation quality needs significant improvement`);
         }
 
-        // Save detailed report
-        const reportPath = 'output/validation_report.json';
-        fs.writeFileSync(reportPath, JSON.stringify({
+        // Save detailed report to JSON file
+        this.saveDetailedReport(overallAverageScore, totalValidations, {
+            excellent: excellentCount,
+            good: goodCount,
+            acceptable: acceptableCount,
+            needsImprovement: needsImprovementCount
+        });
+    }
+
+    /**
+     * Save detailed validation report to JSON file
+     * @param {number} overallScore - Overall average score
+     * @param {number} totalValidations - Total number of validations
+     * @param {Object} qualityDistribution - Quality level distribution
+     */
+    saveDetailedReport(overallScore, totalValidations, qualityDistribution) {
+        const reportData = {
             timestamp: new Date().toISOString(),
-            overallScore: overallAverage,
+            overallScore,
             totalValidations,
-            results: this.validationResults
-        }, null, 2));
+            qualityDistribution,
+            languageResults: this.validationResults
+        };
+
+        const reportPath = 'output/enhanced_validation_report.json';
+        fs.writeFileSync(reportPath, JSON.stringify(reportData, null, 2));
 
         console.log(`\n📁 Detailed report saved to: ${reportPath}`);
     }
 }
 
+// ============================================================================
+// MAIN EXECUTION FUNCTION
+// ============================================================================
+
+/**
+ * Main function to run enhanced translation validation
+ */
 async function main() {
-    console.log("🔍 Starting translation validation...\n");
+    console.log("🔍 Starting enhanced translation validation...\n");
 
     let validator;
     try {
-        validator = new TranslationValidator();
+        validator = new EnhancedTranslationValidator();
     } catch (error) {
         console.error(`❌ Configuration error: ${error.message}`);
         return;
@@ -270,8 +576,9 @@ async function main() {
     }
 }
 
+// Run main function if this file is executed directly
 if (require.main === module) {
     main();
 }
 
-module.exports = TranslationValidator; 
+module.exports = EnhancedTranslationValidator; 

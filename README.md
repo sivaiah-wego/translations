@@ -1,197 +1,302 @@
-# Hotel Amenities Translator
+# 🏨 Upgraded Hotel Amenities Translator v2.0
 
-A JavaScript-based translation system for hotel amenities using OpenAI's GPT-3.5-turbo/GPT-4 models via OpenRouter API.
+A comprehensive translation system for hotel amenities with advanced quality validation, API integration, and automatic retranslation capabilities.
 
-## Features
+## ✨ New Features in v2.0
 
-- **AI-Powered Translation**: Uses OpenAI's GPT-3.5-turbo or GPT-4 for high-quality translations
-- **Batch Processing**: Processes multiple translations in a single API call to optimize costs
-- **CSV Support**: Reads from and writes to CSV files
-- **Multiple Languages**: Supports 30+ languages including Asian languages
-- **Cost Optimization**: Batch processing reduces API calls and costs
-- **Progress Tracking**: Real-time progress updates during translation
-- **Error Handling**: Robust error handling with retry mechanisms
-- **Pure JavaScript**: No Python dependencies required
+### 🔗 API Integration
+- **External API Support**: Fetch room amenities from external APIs
+- **Fallback System**: Automatic fallback to sample data if API fails
+- **JSON Input/Output**: Native JSON support for better data handling
 
-## Prerequisites
+### 🌍 Enhanced Translation
+- **Context-Aware Prompts**: Specialized prompts for hotel/hospitality context
+- **Native Language Focus**: Emphasis on natural, native-sounding translations
+- **Batch Processing**: Efficient batch translation with rate limiting
+- **Missing Translation Detection**: Only translates missing languages
 
-- Node.js 16 or higher
-- OpenRouter API key
-- Internet connection for API calls
+### 🎯 Quality Validation
+- **Per-Language Scoring**: Individual quality scores for each language
+- **Detailed Analysis**: Breakdown of accuracy, cultural appropriateness, natural flow, and technical correctness
+- **Automatic Retranslation**: Re-translates languages scoring below 8.5/10
+- **Quality Thresholds**: Configurable quality thresholds for different standards
 
-## Installation
+### 📊 Advanced Reporting
+- **Enhanced Validation Reports**: Detailed quality analysis per language
+- **Quality Distribution**: Track excellent, good, acceptable, and needs-improvement languages
+- **Export Capabilities**: JSON and CSV export with comprehensive data
 
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/yourusername/hotel-amenities-translator.git
-   cd hotel-amenities-translator
-   ```
+## 🚀 Quick Start
 
-2. **Install Node.js dependencies**:
-   ```bash
-   npm install
-   ```
+### 1. Installation
+```bash
+npm install
+```
 
-3. **Set up your API key**:
-   Copy the example environment file and add your API key:
-   ```bash
-   cp env.example .env
-   ```
-   Then edit `.env` and add your OpenRouter API key:
-   ```
-   OPENROUTER_API_KEY=your_openrouter_api_key_here
-   ```
+### 2. Configuration
+Create a `.env` file with your API keys:
+```env
+OPENROUTER_API_KEY=your_openrouter_api_key_here
+AMENITIES_API_URL=https://srv.wego.com
+AMENITIES_ENDPOINT=/hotels/room_amenities?per_page=200
+```
 
-## Usage
+### 3. Run the Translator
+```bash
+npm start
+```
 
-### Quick Start
+### 4. Validate Translations
+```bash
+npm run validate
+```
 
-1. **Test your API key**:
-   ```bash
-   npm test
-   # or
-   node test-api.js
-   ```
-
-2. **Run the translator**:
-   ```bash
-   npm start
-   # or
-   node translator.js
-   ```
-
-### Advanced Usage
-
-1. **Analyze costs before translation**:
-   ```bash
-   npm run analyze
-   # or
-   node analyze-costs.js
-   ```
-
-2. **Test project setup**:
-   ```bash
-   npm run test-project
-   # or
-   node test-project.js
-   ```
-
-3. **Run setup wizard**:
-   ```bash
-   npm run setup
-   # or
-   node setup.js
-   ```
-
-## Project Structure
+## 📁 Project Structure
 
 ```
-hotel-amenities-translator/
+translations/
+├── translator.js               # Main translator with quality validation
+├── api-service.js             # API integration for fetching amenities
+├── validate_translations.js   # Enhanced validation with per-language scoring
 ├── data/
-│   ├── results.csv          # Input CSV file
-│   └── results.csv.example  # Example input format
-├── output/                  # Generated CSV files
-├── config.js               # Configuration settings
-├── translator.js           # Main translation script
-├── test-api.js            # API testing script
-├── analyze-costs.js       # Cost analysis script
-├── test-project.js        # Project testing script
-├── setup.js               # Setup wizard
-├── validate_translations.js # Translation validation
-├── package.json           # Node.js dependencies
-├── env.example            # Example environment file
-├── .env                   # API key (create this)
-├── .gitignore            # Git ignore rules
-├── LICENSE               # MIT License
-├── CONTRIBUTING.md       # Contributing guidelines
-├── CHANGELOG.md          # Version history
-└── README.md             # This file
+│   └── amenities.json         # Fetched amenities data
+├── output/
+│   ├── translated_amenities.json    # Final translated amenities
+│   └── translated_amenities.csv     # CSV export
+└── package.json
 ```
 
-## Configuration
+## 🔧 Configuration
 
-Edit `config.js` to customize:
+### API Configuration
+- **AMENITIES_API_URL**: Your external API base URL for fetching amenities
+- **AMENITIES_ENDPOINT**: The specific endpoint path (default: `/amenities/rooms`)
+- **OPENROUTER_API_KEY**: OpenRouter API key for translation and validation
 
-- **Model**: Choose between `openai/gpt-3.5-turbo` (faster, cheaper) or `openai/gpt-4` (better quality)
-- **Batch Size**: Number of translations per API call (default: 10)
-- **Temperature**: Controls translation creativity (default: 0.3)
-- **Languages**: Add or modify supported languages
+### Quality Thresholds
+- **EXCELLENT_THRESHOLD**: 9.0 (Excellent quality)
+- **GOOD_THRESHOLD**: 7.5 (Good quality)
+- **ACCEPTABLE_THRESHOLD**: 6.0 (Acceptable quality)
+- **RETRANSLATION_THRESHOLD**: 8.5 (Triggers retranslation)
 
-## Input Format
+## 🌍 Supported Languages
 
-The `data/results.csv` file should have:
-- `id`: Unique identifier
-- `en`: English text to translate
-- Language columns: `ar`, `de`, `es`, `fr`, etc.
+The system supports 31 languages:
 
-Example:
+| Code | Language | Code | Language |
+|------|----------|------|----------|
+| `ar` | Arabic | `gu` | Gujarati |
+| `de` | German | `hi` | Hindi |
+| `es` | Spanish | `kn` | Kannada |
+| `es419` | Latin American Spanish | `ml` | Malayalam |
+| `fr` | French | `mr` | Marathi |
+| `it` | Italian | `or` | Odia |
+| `ja` | Japanese | `pa` | Punjabi |
+| `ko` | Korean | `ta` | Tamil |
+| `nl` | Dutch | `te` | Telugu |
+| `pl` | Polish | `bn` | Bengali |
+| `pt` | Portuguese | `fa` | Persian |
+| `ptBr` | Brazilian Portuguese | `ms` | Malay |
+| `ru` | Russian | `zhTw` | Taiwan Traditional Chinese |
+| `sv` | Swedish | | |
+| `th` | Thai | | |
+| `vi` | Vietnamese | | |
+| `zhCn` | Simplified Chinese | | |
+| `zhHk` | Traditional Chinese | | |
+
+## 🔄 Workflow
+
+### 1. API Data Fetching
+```javascript
+// Fetch amenities from external API
+const apiData = await translator.apiService.fetchRoomAmenities();
+const amenities = translator.apiService.transformApiData(apiData);
+```
+
+### 2. Translation Process
+```javascript
+// Translate missing languages with quality validation
+const results = await translator.translateAllLanguages(amenities);
+```
+
+### 3. Quality Validation
+```javascript
+// Validate each language and retranslate if needed
+const validationResult = await translator.validateAndRetranslateLanguage(
+    amenities, languageCode, languageName
+);
+```
+
+### 4. Output Generation
+```javascript
+// Save results in multiple formats
+translator.saveAmenitiesToJson(amenities, 'output/translated_amenities.json');
+await translator.saveAmenitiesToCsv(amenities, 'output/translated_amenities.csv');
+```
+
+## 📊 Quality Validation
+
+### Validation Criteria
+1. **Accuracy (30%)**: Does the translation convey the same meaning?
+2. **Cultural Appropriateness (25%)**: Is it suitable for hotel context?
+3. **Natural Flow (25%)**: Does it sound native in the target language?
+4. **Technical Correctness (20%)**: Are grammar and spelling correct?
+
+### Quality Levels
+- **EXCELLENT (≥9.0)**: Perfect or near-perfect translations
+- **GOOD (≥7.5)**: High-quality translations with minor issues
+- **ACCEPTABLE (≥6.0)**: Adequate translations needing some improvement
+- **NEEDS_IMPROVEMENT (<6.0)**: Poor translations requiring significant work
+
+### Automatic Retranslation
+Languages scoring below 8.5/10 are automatically retranslated with:
+- Specific quality issue feedback
+- Enhanced prompts addressing identified problems
+- Re-validation after retranslation
+
+## 🛠️ Available Scripts
+
+```bash
+# Run the upgraded translator
+npm start
+
+# Run legacy translator
+npm run start:legacy
+
+# Run enhanced validation
+npm run validate:enhanced
+
+# Run legacy validation
+npm run validate
+
+# Test API connection
+npm test
+
+# Setup project
+npm run setup
+
+# Analyze costs
+npm run analyze
+```
+
+## 📈 Output Files
+
+### JSON Output
+```json
+{
+  "id": "amenity_001",
+  "en": "Free WiFi",
+  "category": "internet",
+  "priority": "high",
+  "es": "WiFi gratuito",
+  "fr": "WiFi gratuit",
+  "de": "Kostenloses WLAN"
+}
+```
+
+### CSV Output
 ```csv
-id,en,ar,de,es
-1,Free WiFi,WiFi مجاني,Kostenloses WLAN,WiFi gratuito
-2,Air Conditioning,تكييف الهواء,Klimaanlage,Aire acondicionado
+id,en,category,priority,es,fr,de
+amenity_001,Free WiFi,internet,high,WiFi gratuito,WiFi gratuit,Kostenloses WLAN
 ```
 
-## Output
+### Validation Report
+```json
+{
+  "timestamp": "2024-01-15T10:30:00.000Z",
+  "overallScore": 8.7,
+  "totalValidations": 155,
+  "qualityDistribution": {
+    "excellent": 12,
+    "good": 15,
+    "acceptable": 3,
+    "needsImprovement": 1
+  },
+  "languageResults": [...]
+}
+```
 
-The translator generates `output/translated_amenities_js.csv` with all translations completed.
+## 🔧 Customization
 
-## Cost Estimation
+### Adding New Languages
+1. Add language code and name to `LANGUAGE_NAMES` object
+2. Update API service to handle new language codes
+3. Test with sample translations
 
-- **GPT-3.5-turbo**: ~$0.0015 per 1K input tokens, ~$0.002 per 1K output tokens
-- **GPT-4**: ~$0.03 per 1K input tokens, ~$0.06 per 1K output tokens
+### Modifying Quality Thresholds
+```javascript
+// In translator-v2.js
+const QUALITY_THRESHOLD = 8.5; // Adjust retranslation threshold
+const EXCELLENT_THRESHOLD = 9.0; // Adjust quality levels
+const GOOD_THRESHOLD = 7.5;
+const ACCEPTABLE_THRESHOLD = 6.0;
+```
 
-Use `npm run analyze` to estimate costs before running translations.
+### Custom API Integration
+```javascript
+// In api-service.js
+async fetchRoomAmenities() {
+    // Replace with your API endpoint
+    const response = await this.client.get('/your-api-endpoint');
+    return response.data;
+}
+```
 
-## Troubleshooting
+## 🚨 Error Handling
 
-### Common Issues
+### API Failures
+- Automatic fallback to sample data
+- Detailed error logging
+- Graceful degradation
 
-1. **API Key Error (401)**:
-   - Ensure your OpenRouter API key is correct
-   - Check that the key has sufficient balance
-   - Verify the key format starts with `sk-or-v1-`
+### Translation Errors
+- Individual translation error handling
+- Batch processing continues despite individual failures
+- Error reporting in output files
 
-2. **Module Not Found**:
-   - Run `npm install`
-   - Ensure you're in the correct directory
+### Validation Errors
+- Retry mechanism for failed validations
+- Detailed error logging
+- Fallback validation methods
 
-3. **CSV File Not Found**:
-   - Place your `results.csv` file in the `data/` directory
-   - Check file permissions
+## 📝 Logging
 
-### Getting Help
+The system provides comprehensive logging:
+- 🔗 API connection status
+- 🌍 Translation progress per language
+- 🔍 Validation results and scores
+- ⚠️ Quality issues and recommendations
+- 💾 File save confirmations
 
-1. Run `npm run test-project` to diagnose issues
-2. Check the console output for specific error messages
-3. Verify your API key with `npm test`
+## 🤝 Contributing
 
-## API Key Setup
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Add tests if applicable
+5. Submit a pull request
 
-1. **Get OpenRouter API Key**:
-   - Visit [OpenRouter](https://openrouter.ai/)
-   - Sign up and get your API key
-   - Add funds to your account
+## 📄 License
 
-2. **Configure the Key**:
-   - Create `.env` file: `OPENROUTER_API_KEY=sk-or-v1-your-key-here`
-   - Test with: `npm test`
+MIT License - see LICENSE file for details.
 
-## Available Scripts
+## 🆚 Version Comparison
 
-- `npm start` - Run the translator
-- `npm test` - Test API key
-- `npm run setup` - Setup wizard
-- `npm run analyze` - Cost analysis
-- `npm run test-project` - Project diagnostics
+| Feature | v1.0 | v2.0 |
+|---------|------|------|
+| API Integration | ❌ | ✅ |
+| JSON Support | ❌ | ✅ |
+| Per-Language Validation | ❌ | ✅ |
+| Automatic Retranslation | ❌ | ✅ |
+| Enhanced Prompts | ❌ | ✅ |
+| Quality Thresholds | ❌ | ✅ |
+| Detailed Reporting | ❌ | ✅ |
+| Error Handling | Basic | Advanced |
 
-## Contributing
+## 🎯 Next Steps
 
-We welcome contributions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on how to contribute to this project.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Changelog
-
-See [CHANGELOG.md](CHANGELOG.md) for a history of changes and releases. 
+- [ ] Add support for more languages
+- [ ] Implement translation memory
+- [ ] Add web interface
+- [ ] Integrate with translation management systems
+- [ ] Add machine learning quality prediction 
